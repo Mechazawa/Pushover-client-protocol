@@ -2,10 +2,12 @@ PushOver client api
 =====
 
 ## Notes
-The API will return the default 404 page if a request was invalid and the api function is hidden. 
+* The API will return the default 404 page if a request was invalid and the api function is hidden. 
+* The base url for all API requests is https://api.PushOver.net/1/
+* If the returned status != 1 then something went wrong
+* All API calls must be made over https
 
-## Login
-POST
+## Login - /login.json
 
 This API call is used for creating a session token. Also known as "secret"
 
