@@ -36,7 +36,6 @@ class PooshyClient(object):
             "secret": self.secret, "os": "A"
         })
         response = json.load(urllib2.urlopen(baseurl + "/devices.json", data))
-        print response
         self.device = uuid
         return response['status'] == 1
 
