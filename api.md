@@ -14,8 +14,9 @@ This API call is used for creating a session token. Also known as "secret"
 | Email    | Email of the user | POST   |
 | Password | User password     | POST   |
 
-*returns*
-```json
+The the request meets the specified parameters then the server will return the following
+
+```js
 {
     'status': 1, // If the status != 1 then something went wrong
     'secret': '9W8B3AFFCwzHf8ldaYYBHuMusDyebF8vGcgcVIdafuTstVAoQ7cg6uk5P3y9', // The session token
