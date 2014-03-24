@@ -78,7 +78,7 @@ This API call registers a device
 }
 ```
 
-## Mark all read -  /devices/<uuid>/update\_highest_message.json
+## Mark read -  /devices/\<uuid\>/update\_highest_message.json
 
 Not sure if it's supposed to do what I think it's doing but it seems to do the trick
 
