@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # coding=utf-8
 
 import urllib2
@@ -7,9 +7,8 @@ from urllib import urlencode
 from datetime import datetime
 from time import sleep
 
+
 baseurl = "https://api.pushover.net/1"
-
-
 class PooshyClient(object):
     def __init__(self):
         self.secret = ""
@@ -82,15 +81,17 @@ class Message(object):
         self._uuid = uuid
         self._secret = secret
 
+        
+PushoverClient = PooshyClient
+if __name__ == '__main__':
+    print "Logging in"
+    poosh = PooshyClient()
+    poosh.login("email", "password")
+    poosh.registerdevice("Python", "python")
 
-print "Logging in"
-poosh = PooshyClient()
-poosh.login("email", "password")
-poosh.registerdevice("Python", "python")
-
-while True:
-    msg = poosh.messages()
-    for p in msg:
-        print "[%i %s] %s" % (p.id, p.title or p.app, p.message)
-    poosh.markallread()
-    sleep(5) # Be nice to their server
+    while True:
+        msg = poosh.messages()
+        for p in msg:
+            print "[%i %s] %s" % (p.id, p.title or p.app, p.message)
+        poosh.markallread()
+        sleep(5) # Be nice to their server
